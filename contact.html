@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Rabia's Creations</title>
+    <meta name="description" content="Start a commission with Rabia's Creations — enquiry form, WhatsApp, Instagram and studio details.">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="index.html" class="brand">
+                <img src="images/LOGO.jpeg" alt="Rabia's Creations logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Commission a Piece</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+                <span class="kicker">Let's start your piece</span>
+                <h1>Get in touch</h1>
+                <p>Fill in the form with a few details about what you'd like painted, or reach out directly on WhatsApp or Instagram — replies usually come within a day.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap contact-grid">
+
+                <div class="reveal">
+                    <h2 style="font-size:1.5rem;">Commission enquiry</h2>
+                    <p style="color:var(--ink-soft);">This form doesn't go to a server — once it's validated, it opens WhatsApp with your message ready to send, so nothing gets lost in an inbox.</p>
+
+                    <form id="enquiry-form" novalidate>
+                        <div class="form-field">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" placeholder="e.g. Ayesha Khan" autocomplete="name">
+                            <p class="field-error">Please tell us your name (at least 2 characters).</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                            <p class="field-error">Enter a valid email address, e.g. name@example.com.</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="piece">What would you like painted?</label>
+                            <select id="piece" name="piece">
+              <option value="Landscape / Nature">Landscape / Nature</option>
+              <option value="Islamic Art / Calligraphy">Islamic Art / Calligraphy</option>
+              <option value="Floral">Floral</option>
+              <option value="Custom Name Art">Custom Name Art</option>
+              <option value="Portrait / Whimsical piece">Portrait / Whimsical piece</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+                            <p class="field-error">Let us know what kind of piece you would like.</p>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">Tell us about it</label>
+                            <textarea id="message" name="message" placeholder="Size you have in mind, the space it's going in, any reference photos you'll send separately..."></textarea>
+                            <p class="field-error">Add a little more detail (at least 15 characters) so we can quote accurately.</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Send via WhatsApp</button>
+                        <p class="form-status" role="status"></p>
+                    </form>
+                </div>
+
+                <div class="reveal">
+                    <div class="info-card">
+                        <h3>Studio details</h3>
+                        <p style="color:rgba(250,246,236,0.8); font-size:0.94rem;">Based in Lahore, Pakistan — taking on commissions by message, viewings by appointment only.</p>
+                        <ul class="info-list">
+                            <li>
+                                <div>
+                                    <strong>WhatsApp</strong>
+                                    <a href="https://wa.me/92345 1111111" target="_blank" rel="noopener">0345 1111111</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <strong>Instagram</strong>
+                                    <a href="https://instagram.com/rabia.creations_" target="_blank" rel="noopener">@rabia.creations_</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <strong>Email</strong>
+                                    <a href="mailto:rabiamubeen2006@gmail.com">rabiamubeen2006@gmail.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <strong>Studio hours</strong>
+                                    <span>Mon–Sat, 11am–7pm (Lahore time)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <strong>Typical response time</strong>
+                                    <span>Within 24 hours</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-text">Rabia's Creations</a>
+                    <p style="margin-top:14px;">Hand-painted originals and custom commissions, painted to order in a small home studio in Lahore.</p>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="gallery.html?category=landscape">Landscapes</a></li>
+                        <li><a href="gallery.html?category=islamic">Islamic Art</a></li>
+                        <li><a href="gallery.html?category=floral">Floral</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Get in touch</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923451111111" target="_blank" rel="noopener">WhatsApp: 0345 1111111</a></li>
+                        <li><a href="https://instagram.com/rabia.creations_" target="_blank" rel="noopener">@rabia.creations_</a></li>
+                        <li><a href="contact.html">Contact page</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; <span id="year"></span> Rabia's Creations. All rights reserved.</span>
+
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+    <script src="js/nav.js"></script>
+    <script src="js/contact.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
