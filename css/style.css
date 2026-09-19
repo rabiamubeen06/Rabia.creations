@@ -1,0 +1,370 @@
+/* ---------- 1. Fonts ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Beau+Rivage&display=swap');
+
+/* ---------- 2. Design tokens ---------- */
+
+:root {
+    /* Palette — "Alpine & Sage", drawn from the mountain and landscape
+     paintings: pale sage backgrounds, deep pine ink, forest-green
+     accents, and a rust highlight lifted from the mountain rock face. */
+    --parchment: #EEF1EA;
+    --parchment-deep: #DCE3D6;
+    --canvas: #F6F8F2;
+    --ink: #22332A;
+    --ink-soft: #52604F;
+    --walnut: #3F5B4E;
+    --walnut-dark: #263D33;
+    --terracotta: #B6602F;
+    --terracotta-dark: #8F4A22;
+    --sage: #7C8F72;
+    --dust-rose: #C9A46B;
+    --gold: #A9782F;
+    --line: rgba(34, 51, 42, 0.16);
+    --line-soft: rgba(34, 51, 42, 0.08);
+    --shadow: 0 18px 40px rgba(18, 28, 22, 0.18);
+    --shadow-soft: 0 10px 24px rgba(18, 28, 22, 0.12);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-script: "Beau Rivage", cursive;
+    --font-body: "Work Sans", "Segoe UI", sans-serif;
+    --radius: 3px;
+    --content-width: 1180px;
+}
+
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.5em;
+    color: var(--walnut-dark);
+}
+
+p {
+    margin: 0 0 1em;
+    max-width: 62ch;
+}
+
+:focus-visible {
+    outline: 3px solid var(--terracotta);
+    outline-offset: 3px;
+}
+
+
+/* ---------- 4. Layout helpers ---------- */
+
+.wrap {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+.section {
+    padding: 88px 0;
+}
+
+.section--tight {
+    padding: 56px 0;
+}
+
+.section--muted {
+    background: var(--canvas);
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.section-head {
+    max-width: 640px;
+    margin-bottom: 44px;
+}
+
+.section-head p {
+    color: var(--ink-soft);
+    font-size: 1.08rem;
+}
+
+.kicker {
+    display: inline-block;
+    font-family: var(--font-script);
+    font-size: 1.7rem;
+    color: var(--terracotta-dark);
+    margin-bottom: 2px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ---------- 5. Header & Navigation ---------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background: rgba(238, 241, 234, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid transparent;
+    transition: box-shadow .3s ease, border-color .3s ease;
+}
+
+.site-header.is-scrolled {
+    box-shadow: 0 6px 20px rgba(18, 28, 22, 0.12);
+    border-bottom-color: var(--line);
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    height: 46px;
+    width: auto;
+}
+
+.brand-text {
+    font-family: var(--font-script);
+    font-size: 1.9rem;
+    color: var(--walnut-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--ink);
+    border-bottom: 2px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    color: var(--terracotta-dark);
+    border-color: var(--terracotta);
+}
+
+.nav-cta {
+    background: var(--walnut);
+    color: var(--canvas) !important;
+    border-radius: var(--radius);
+    border-bottom: none !important;
+}
+
+.nav-cta:hover {
+    background: var(--terracotta-dark);
+    color: var(--canvas) !important;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    margin: 0 auto;
+    background: var(--walnut-dark);
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ---------- 6. Buttons ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.96rem;
+    border: 1px solid transparent;
+    transition: transform .18s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+    background: var(--terracotta-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--walnut);
+    color: var(--walnut-dark);
+}
+
+.btn-outline:hover {
+    background: var(--walnut);
+    color: var(--canvas);
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* ---------- 14. Footer ---------- */
+
+.site-footer {
+    background: var(--walnut-dark);
+    color: #DCE7DE;
+    padding: 60px 0 26px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(220, 231, 222, 0.15);
+}
+
+.footer-brand .brand-text {
+    color: #EDF4EE;
+}
+
+.footer-grid p {
+    color: rgba(220, 231, 222, 0.72);
+    font-size: 0.92rem;
+}
+
+.footer-grid h4 {
+    color: #EDF4EE;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.footer-grid ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-grid a {
+    color: rgba(220, 231, 222, 0.78);
+    font-size: 0.92rem;
+}
+
+.footer-grid a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    padding-top: 22px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: rgba(220, 231, 222, 0.55);
+}
