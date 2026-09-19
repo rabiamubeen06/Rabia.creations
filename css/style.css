@@ -779,3 +779,190 @@ p {
     background: var(--walnut);
     color: var(--canvas);
 }
+
+
+/* ---------- 10. Process steps / cards ---------- */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    counter-reset: step;
+}
+
+.step {
+    padding: 28px 22px;
+    background: var(--canvas);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.step::before {
+    counter-increment: step;
+    content: counter(step);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--terracotta);
+    border: 1px solid var(--terracotta);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.step h3 {
+    font-size: 1.08rem;
+}
+
+.step p {
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.pkg-card {
+    background: var(--canvas);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius);
+    padding: 32px 26px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+}
+
+.pkg-card.is-featured {
+    border-color: var(--terracotta);
+    box-shadow: var(--shadow);
+}
+
+.pkg-card .badge {
+    align-self: flex-start;
+    background: var(--terracotta);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.pkg-card .price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--walnut-dark);
+    margin-bottom: 4px;
+}
+
+.pkg-card .price span {
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: var(--ink-soft);
+}
+
+.pkg-card ul {
+    margin: 18px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pkg-card li {
+    font-size: 0.94rem;
+    padding-left: 22px;
+    position: relative;
+    color: var(--ink-soft);
+}
+
+.pkg-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 700;
+}
+
+.pkg-card .btn {
+    margin-top: auto;
+}
+
+
+/* ---------- 11. Accordion ---------- */
+
+.accordion {
+    border-top: 1px solid var(--line);
+}
+
+.accordion details {
+    border-bottom: 1px solid var(--line);
+}
+
+.accordion summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 4px;
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    color: var(--walnut-dark);
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion summary::marker {
+    display: none;
+}
+
+.accordion summary .icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--walnut);
+    border-radius: 50%;
+    position: relative;
+}
+
+.accordion summary .icon::before,
+.accordion summary .icon::after {
+    content: "";
+    position: absolute;
+    background: var(--walnut);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.accordion summary .icon::before {
+    width: 12px;
+    height: 2px;
+}
+
+.accordion summary .icon::after {
+    width: 2px;
+    height: 12px;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+details[open] summary .icon::after {
+    opacity: 0;
+}
+
+.accordion details>div {
+    padding: 0 4px 22px;
+    color: var(--ink-soft);
+    max-width: 68ch;
+}
